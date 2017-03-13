@@ -172,12 +172,12 @@
 (require 'gams)
 (if mswindows
   (progn
-    (setq gams:process-command-name "c:/Programs/GAMS/win64/24.3/gams.exe")
-    (setq gams-system-directory "c:/Programs/GAMS/win64/24.3/")
-    (setq gams-docs-directory "c:/Programs/GAMS/win64/24.3/docs")
+    (setq gams:process-command-name "y:/GAMS24.7.4-64/gams.exe")
+    (setq gams-system-directory "y:/GAMS24.7.4-64/")
+    (setq gams-docs-directory "y:/GAMS24.7.4-64/docs")
     (setq gams-docs-view-program "C:/Program Files/Tracker Software/PDF Viewer/PDFXCview.exe")
     (setq load-path
-	  (cons "c:/Programs/GAMS/win64/24.3/" ;; Set the installed directory!
+	  (cons "y:/GAMS24.7.4-64/" ;; Set the installed directory!
 		load-path)))
   (progn
     (setq gams-docs-directory "/opt/gams/gams24.6_linux_x64_64_sfx/docs")
@@ -259,7 +259,8 @@
 (setq reftex-cite-format (quote natbib))
 (setq reftex-sort-bibtex-matches (quote author))
 ;; (setq reftex-plug-into-AUCTeX t)
-(setq LaTeX-math-abbrev-prefix "²")
+;; (setq LaTeX-math-abbrev-prefix "²")
+(setq LaTeX-math-abbrev-prefix "`")
 (setq TeX-source-specials-mode 1)
 (setq TeX-source-correlate-mode t)
 (setq TeX-source-correlate-method (quote synctex))
