@@ -1,5 +1,8 @@
 auto-complete
 ein
+latex-pretty-symbols
+latex-preview-pane-mode
+magit
 pager
 polymode
 ps-ccrypt
