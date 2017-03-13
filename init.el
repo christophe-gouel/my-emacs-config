@@ -664,6 +664,11 @@
 (require 'poly-markdown)
 (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
 
+;;; =======
+;;;  Magit
+;;; =======
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ;;; ========
 ;;;  ccrypt
 ;;; ========
@@ -679,17 +684,22 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ess-R-font-lock-keywords (quote (
-				    (ess-R-fl-keyword:modifiers . t)
-				    (ess-R-fl-keyword:fun-defs . t)
-				    (ess-R-fl-keyword:keywords . t)
-				    (ess-R-fl-keyword:assign-ops . t)
-				    (ess-R-fl-keyword:constants . t)
-				    (ess-fl-keyword:fun-calls . t)
-				    (ess-fl-keyword:numbers . t)
-				    (ess-fl-keyword:operators . t)
-				    (ess-fl-keyword:delimiters . t)
-				    (ess-fl-keyword:= . t)
-				    (ess-R-fl-keyword:F&T . t)))))
+ '(ess-R-font-lock-keywords
+   (quote
+    ((ess-R-fl-keyword:modifiers . t)
+     (ess-R-fl-keyword:fun-defs . t)
+     (ess-R-fl-keyword:keywords . t)
+     (ess-R-fl-keyword:assign-ops . t)
+     (ess-R-fl-keyword:constants . t)
+     (ess-fl-keyword:fun-calls . t)
+     (ess-fl-keyword:numbers . t)
+     (ess-fl-keyword:operators . t)
+     (ess-fl-keyword:delimiters . t)
+     (ess-fl-keyword:= . t)
+     (ess-R-fl-keyword:F&T . t))))
+ '(latex-preview-pane-multifile-mode (quote auctex))
+ '(package-selected-packages
+   (quote
+    (magit latex-preview-pane latex-pretty-symbols yaml-mode vlf ps-ccrypt polymode pandoc-mode pandoc pager ein auto-complete))))
 
 (setenv "CYGWIN" "nodosfilewarning")
