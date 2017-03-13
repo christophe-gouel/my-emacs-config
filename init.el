@@ -250,6 +250,7 @@
 ;;; ============
 ;;;  LaTeX-mode
 ;;; ============
+(setq preview-gs-command (executable-find "gswin64c"))
 (setq reftex-bibpath-environment-variables (quote ("BIBINPUTS")))
 (setq-default TeX-auto-parse-length 200)
 (setq-default TeX-master nil)
@@ -333,7 +334,7 @@
 
 (if mswindows
     (progn
-      (setq TeX-view-program-list (quote (("Sumatra PDF" ("\"C:/Program Files (x86)/SumatraPDF/SumatraPDF.exe\" -reuse-instance" (mode-io-correlate " -forward-search %b %n") " %o")))))
+      (setq TeX-view-program-list (quote (("Sumatra PDF" ("\"C:/Program Files/SumatraPDF/SumatraPDF.exe\" -reuse-instance" (mode-io-correlate " -forward-search %b %n") " %o")))))
       (setq TeX-view-program-selection (quote ((output-pdf "Sumatra PDF")))))
     (progn
       (setq TeX-view-program-list '(("qpdfview" "qpdfview --instance emacsauxtex --unique \"%o#src:%b:%n:0\"")))
@@ -403,6 +404,7 @@
 ;;;  PDF
 ;;; =====
 (require 'doc-view)
+(setq doc-view-ghostscript-program "gswin64c")
 
 ;;; ===============
 ;;;  Remote access
@@ -458,8 +460,8 @@
 
 ;; mlint
 (if mswindows
-    (setq mlint-programs (quote ("C:/Program Files/MATLAB/R2016a/bin/win64/mlint.exe")))
-  (setq mlint-programs (quote ("/usr/local/MATLAB/R2016a/bin/glnxa64/mlint"))))
+    (setq mlint-programs (quote ("C:/Program Files/MATLAB/R2016b/bin/win64/mlint.exe")))
+  (setq mlint-programs (quote ("/usr/local/MATLAB/R2016b/bin/glnxa64/mlint"))))
 
 ;; Matlab shell
 (autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
