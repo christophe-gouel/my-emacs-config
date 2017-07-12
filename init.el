@@ -271,6 +271,7 @@
 (setq TeX-source-correlate-start-server (quote ask))
 (setq TeX-PDF-mode t)
 
+(require 'latex-pretty-symbols)
 (add-hook 'TeX-mode-hook 'flyspell-mode)
 (add-hook 'TeX-mode-hook 'auto-fill-mode)
 (add-hook 'TeX-mode-hook 'latex-math-mode)
@@ -281,7 +282,7 @@
 			     (auto-fill-mode)
 			     (turn-on-reftex)
 			     (setq reftex-plug-into-AUCTeX t)))
-(add-hook 'TeX-mode-hook 'TeX-fold-buffer t)
+;; (add-hook 'TeX-mode-hook 'TeX-fold-buffer t)
 
 (add-hook 'LaTeX-mode-hook
      '(lambda nil
@@ -300,7 +301,7 @@
             (define-key TeX-mode-map (kbd "<f10>")
               (lambda ()
                 (interactive)
-		(TeX-fold-buffer)
+		;; (TeX-fold-buffer)
                 (preview-at-point)))
             (define-key TeX-mode-map (kbd "<f12>")
               (lambda ()
